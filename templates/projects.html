@@ -1,0 +1,306 @@
+{% extends "base.html" %} {% block content %}
+<section class="section projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+
+    <!-- Project Filters -->
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="AI/ML">AI/ML</button>
+      <button class="filter-btn" data-filter="Computer Vision">
+        Computer Vision
+      </button>
+      <button class="filter-btn" data-filter="Web Development">Web Dev</button>
+      <button class="filter-btn" data-filter="Other">Other</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- MEDGPT -->
+      <div class="project-card" data-category="AI/ML">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/medgpt.PNG') }}"
+            alt="MEDGPT"
+          />
+        </div>
+        <div class="project-info">
+          <h3>MEDGPT – Fine-Tuned LLM on Medical Dataset</h3>
+          <p>
+            A specialized medical chatbot built using a fine-tuned T5-small
+            model on a PubMedQA dataset with 213K records. Integrated into a
+            Flask web app, it provides expert-like medical responses with
+            support for file uploads and context-aware interactions.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Transformers</span>
+            <span>NLP</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Alishan45/RAG-Full-parameterized-fine-tuning" target="_blank">
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concealed Weapon Detection -->
+      <div class="project-card" data-category="Computer Vision">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/weapon.png') }}"
+            alt="Weapon Detection"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Concealed Weapon Detection</h3>
+          <p>
+            A computer vision system that detects hidden firearms using thermal
+            images processed through a YOLO-based object detection model. It
+            enhances security by enabling real-time threat identification in
+            surveillance feeds.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>YOLO</span>
+            <span>Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/conceal-weaponDetection"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plant Disease Detection -->
+      <div class="project-card" data-category="AI/ML">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/plant.jpg') }}"
+            alt="Plant Disease"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Plant Disease Detection</h3>
+          <p>
+            A deep learning model trained on leaf images to classify and detect
+            various plant diseases. Utilizes a Convolutional Neural Network
+            (CNN) architecture to assist farmers in early diagnosis and crop
+            protection.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>TensorFlow</span>
+            <span>CNN</span>
+            <span>Image Processing</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/Plant-Disease-Detection"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Website -->
+      <div class="project-card" data-category="Web Development">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/portfolio.jpg') }}"
+            alt="Portfolio Website"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Portfolio Website</h3>
+          <p>
+            A sleek, interactive, and responsive personal website designed to
+            showcase professional projects and skills. Features dark/light mode,
+            animations, and a modern UI to attract clients, employers, and
+            collaborators.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/portfolio-website"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Satellite House Detection -->
+      <div class="project-card" data-category="Computer Vision">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/houseDetectionViaSatillite.jpg') }}"
+            alt="Satellite House Detection"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Satellite House Detection</h3>
+          <p>
+            A computer vision application that detects buildings and houses from
+            satellite imagery. Useful in urban planning, disaster assessment,
+            and remote monitoring through automated image analysis.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>YOLO</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/satilliteHouseDetection"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skin Disease Detection -->
+      <div class="project-card" data-category="Computer Vision">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/Skincancer.png') }}"
+            alt="Skin Disease Detection"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Skin Disease Detection</h3>
+          <p>
+            An object detection-based solution using the YOLO framework to
+            identify and classify skin diseases from clinical images. Offers
+            fast and accurate diagnosis support for dermatological conditions.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>YOLO</span>
+            <span>Medical Imaging</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/skinCancerClassifcation"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dental Implant Detection -->
+      <div class="project-card" data-category="Computer Vision">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/detentalImplant.jpg') }}"
+            alt="Dental Implant Detection"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Dental Implant Detection</h3>
+          <p>
+            Employs YOLO-based object detection to identify the presence and
+            placement of dental implants in radiographic images. Assists dental
+            professionals in treatment planning and diagnostic workflows.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>YOLO</span>
+            <span>Medical Imaging</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/dental-implant-detection-"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gender Classification via Eye -->
+      <div class="project-card" data-category="AI/ML">
+        <div class="project-image">
+          <img
+            src="{{ url_for('static', filename='images/GenderClassificationViaEye.jpg') }}"
+            alt="Gender Classification via Eye"
+          />
+        </div>
+        <div class="project-info">
+          <h3>Gender Classification via Eye</h3>
+          <p>
+            A deep learning classifier trained on eye images to predict gender.
+            Uses CNNs for feature extraction, providing reliable gender
+            predictions in biometric and demographic analysis tasks.
+          </p>
+          <div class="project-tech">
+            <span>Python</span>
+            <span>CNN</span>
+            <span>TensorFlow</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://github.com/Alishan45/eye-gender-classifier"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub Repos Section -->
+    <h3 class="subsection-title">GitHub Repositories</h3>
+    <div class="github-repos">
+      {% for repo in repos %}
+      <div class="repo-card">
+        <div class="repo-header">
+          <h4>
+            <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+          </h4>
+          <div class="repo-stats">
+            <span class="repo-stars"
+              ><i class="fas fa-star"></i> {{ repo.stargazers_count }}</span
+            >
+            <span class="repo-forks"
+              ><i class="fas fa-code-branch"></i> {{ repo.forks_count }}</span
+            >
+          </div>
+        </div>
+        <p class="repo-description">
+          {{ repo.description or 'No description provided' }}
+        </p>
+        <div class="repo-footer">
+          {% if repo.language %}
+          <span class="repo-language">{{ repo.language }}</span>
+          {% endif %}
+          <span class="repo-updated"
+            >Updated {{ repo.updated_at|datetimeformat }}</span
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

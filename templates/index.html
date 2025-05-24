@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span id="typed-name"></span></h1>
+                <h2>Python Developer | Full-Stack Engineer | Data Scientist</h2>
+                <p>I build scalable web applications and data-driven solutions with Python. Passionate about AI, computer vision, and clean code.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Ali Shan">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a passionate developer with expertise in Python, Flask, and data science. I specialize in building AI-powered applications and robust web solutions.</p>
+                <p>My journey in technology began with a Computer Science degree, and since then I've worked on diverse projects ranging from medical AI to computer vision systems.</p>
+                <p>When I'm not coding, you can find me contributing to open-source projects, writing technical blogs, or exploring new technologies.</p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About Ali Shan">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>SQL</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>C/C++</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Frameworks & Tools</h3>
+                <div class="skill-item">
+                    <span>Flask/FastAPI</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Docker</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>PostgreSQL</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 87%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>VS Code</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview Section -->
+    <section class="section projects-preview" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/medgpt.PNG') }}" alt="MEDGPT Project">
+                </div>
+                <div class="project-info">
+                    <h3>MEDGPT</h3>
+                    <p>Fine-tuned LLM on medical dataset for expert-like responses.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>Transformers</span>
+                    </div>
+                    <a href="{{ url_for('projects_page') }}" class="btn btn-small">View Details</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/weapon.png') }}" alt="YOLO Project">
+                </div>
+                <div class="project-info">
+                    <h3>Concealed Weapon Detection</h3>
+                    <p>YOLO-based system for detecting hidden firearms in thermal images.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>YOLO</span>
+                    </div>
+                    <a href="{{ url_for('projects_page') }}" class="btn btn-small">View Details</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="{{ url_for('static', filename='images/plant.jpg') }}" alt="Plant Disease Project">
+                </div>
+                <div class="project-info">
+                    <h3>Plant Disease Detection</h3>
+                    <p>CNN model to classify diseases from leaf images.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>CNN</span>
+                    </div>
+                    <a href="{{ url_for('projects_page') }}" class="btn btn-small">View Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer">
+            <a href="{{ url_for('projects_page') }}" class="btn btn-primary">Click to View My All Projects</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-envelope"></i> ali3819381@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://github.com/Alishan45" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/ali-shan-542246235/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://drive.google.com/drive/folders/1RhvDu8DLGe7Yizl3GYwVdorjJQho1Xsr" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="{{ url_for('contact') }}" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

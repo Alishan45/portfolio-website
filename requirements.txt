@@ -1,0 +1,6 @@
+Flask
+requests
+markdown2
+Flask_mail
+Flask-WTF
+python-dotenv
