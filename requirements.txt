@@ -4,4 +4,5 @@ markdown2
 Flask_mail
 Flask-WTF
 python-dotenv
+gunicorn 
 vercel-python-wsgi
