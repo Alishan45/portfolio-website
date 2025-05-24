@@ -1,3 +1,4 @@
+from vercel_wsgi import make_lambda_handler
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mail import Mail, Message
 import requests
@@ -86,5 +87,4 @@ def datetimeformat(value, format='%b %d, %Y'):
         value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%SZ')
     return value.strftime(format)
 
-if __name__ == '__main__':
-    app.run(debug=os.getenv('FLASK_ENV') == 'development')
+handler = make_lambda_handler(app)
